@@ -180,7 +180,18 @@ app.controller('mainController', function ($scope, $location) {
       $location.path('/timkiem/' + $scope.search);
       $scope.search = '';
     } else {
-      alert("Vui lòng nhập từ khóa để tìm kiếm!");
+      Swal.fire({
+        title: 'Thông báo',
+        text: 'Vui lòng nhập từ khóa để tìm kiếm!',
+        icon: 'info', // Các icon khác: 'success', 'error', 'warning', 'question'
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3085d6',
+        background: '#fff',
+        color: '#333',
+        customClass: {
+            popup: 'custom-popup',
+        }
+    });
     }
     $http.get()
   };
